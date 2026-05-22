@@ -162,7 +162,7 @@ export default function WeddingCarouselWebsite() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fbf8f4] text-gray-900">
+    <div className="min-h-screen bg-[#fbf8f4] text-gray-900 overflow-x-hidden">
       <audio ref={audioRef} src={`${publicBase}music/song.mp3`} loop preload="auto" autoPlay />
 
       <header className="fixed inset-x-0 top-0 z-40 px-3 py-3 sm:px-8 sm:py-4">
@@ -265,7 +265,7 @@ export default function WeddingCarouselWebsite() {
           <p className="mb-6 text-[11px] font-light uppercase tracking-[0.48em] text-white/70 sm:text-xs">
             Engagement Ceremony
           </p>
-          <h1 className="font-wedding text-[4.4rem] font-thin leading-[0.95] text-white/70 sm:text-[6.4rem] md:text-[8rem] lg:text-[9.5rem]">
+          <h1 className="font-wedding text-[3.4rem] font-thin leading-[0.95] text-white/70 sm:text-[5.6rem] md:text-[8rem] lg:text-[9.5rem]">
             Swapnil & Ritisnigdha
           </h1>
           <p className="mx-auto mt-8 max-w-xl text-sm font-light uppercase tracking-[0.35em] text-white/65 sm:text-base">
@@ -284,7 +284,7 @@ export default function WeddingCarouselWebsite() {
               A quiet promise, a beautiful beginning, and the moments we will keep forever.
             </h2>
           </div>
-          <div className="grid grid-cols-3 gap-3 text-center">
+          <div className="grid grid-cols-1 gap-3 text-center sm:grid-cols-3">
             {['Swapnil', '&', 'Ritisnigdha'].map((item) => (
               <div key={item} className="border border-rose-100 bg-white/70 px-4 py-7 shadow-sm">
                 <p className="font-wedding text-4xl text-rose-400">{item}</p>
@@ -399,7 +399,11 @@ export default function WeddingCarouselWebsite() {
                   src={photo.image}
                   alt="Engagement gallery photograph"
                   className={`w-full object-contain transition duration-700 group-hover:scale-[1.03] ${
-                    index % 5 === 0 ? 'h-[680px]' : index % 3 === 0 ? 'h-[600px]' : 'h-[500px]'
+                    index % 5 === 0
+                      ? 'h-[520px] sm:h-[620px] md:h-[680px]'
+                      : index % 3 === 0
+                      ? 'h-[460px] sm:h-[560px] md:h-[600px]'
+                      : 'h-[420px] sm:h-[500px] md:h-[500px]'
                   }`}
                   loading="lazy"
                   decoding="async"
