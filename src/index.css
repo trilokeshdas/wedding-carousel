@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-wedding {
+  font-family: 'Great Vibes', 'Edwardian Script ITC', 'Palace Script MT', 'Segoe Script', cursive;
+  font-weight: 400;
+  text-shadow: 0 10px 34px rgba(0, 0, 0, 0.3);
+}
+
+.nav-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,50 @@
+## 🎊 Quick Start - Add Your Photos NOW
+
+### 3 Simple Steps:
+
+**Step 1:** Copy your wedding photos into this folder
+```
+wedding-carousel/public/photos/
+```
+
+Name them: `wedding-1.jpg`, `wedding-2.jpg`, `wedding-3.jpg`, `wedding-4.jpg`
+
+**Step 2:** Optional - Update the captions
+
+Edit `src/App.jsx` and change the titles/subtitles to match your photos.
+
+**Step 3:** The carousel is already running!
+
+Visit: **http://localhost:5174**
+
+---
+
+## 📁 File Structure Reference
+
+```
+wedding-carousel/
+  ├── public/
+  │   └── photos/          ← PUT YOUR PHOTOS HERE
+  │       ├── wedding-1.jpg
+  │       ├── wedding-2.jpg
+  │       └── ...
+  ├── src/
+  │   ├── App.jsx          ← Update photo names & captions here
+  │   ├── main.jsx
+  │   └── index.css
+  └── index.html
+```
+
+---
+
+## ✨ What to Expect
+
+- **Auto-rotating carousel** with smooth transitions
+- **Click the dots** at the bottom to jump to any photo
+- **Hover zoom effect** in the gallery section
+- **Mobile responsive** design
+- **Elegant styling** with wedding theme
+
+---
+
+**That's it! Your carousel is ready to go!** 💕
