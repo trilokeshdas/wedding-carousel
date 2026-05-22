@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-const galleryPhotos = [
+const rawGalleryPhotos = [
   { image: '/photos/engagement-optimized/AYS04955.Edit.jpg' },
   { image: '/photos/engagement-optimized/AYS04964.Edit.jpg' },
   { image: '/photos/engagement-optimized/AYS04972.Edit.jpg' },
@@ -40,7 +40,7 @@ const galleryPhotos = [
   { image: '/photos/engagement-optimized/DSC_1805.Edit.jpg' },
 ];
 
-const featuredPortraits = [
+const rawFeaturedPortraits = [
   { image: '/photos/featured-optimized/collage-1.jpg' },
   { image: '/photos/featured-optimized/collage-2.jpg' },
   { image: '/photos/featured-optimized/collage-3.jpg' },
@@ -51,6 +51,16 @@ const featuredPortraits = [
   { image: '/photos/featured-optimized/collage-8.jpg' },
   { image: '/photos/featured-optimized/collage-9.jpg' },
 ];
+
+const publicBase = import.meta.env.BASE_URL;
+const galleryPhotos = rawGalleryPhotos.map((photo) => ({
+  ...photo,
+  image: `${publicBase}${photo.image.startsWith('/') ? photo.image.slice(1) : photo.image}`,
+}));
+const featuredPortraits = rawFeaturedPortraits.map((photo) => ({
+  ...photo,
+  image: `${publicBase}${photo.image.startsWith('/') ? photo.image.slice(1) : photo.image}`,
+}));
 
 const futureEvents = [
   { id: 'pre-wedding', label: 'Pre Wedding', date: 'Coming soon', note: 'A dreamy outdoor album space for the couple portraits.' },
@@ -153,7 +163,7 @@ export default function WeddingCarouselWebsite() {
 
   return (
     <div className="min-h-screen bg-[#fbf8f4] text-gray-900">
-      <audio ref={audioRef} src="/music/song.mp3" loop preload="auto" autoPlay />
+      <audio ref={audioRef} src={`${publicBase}music/song.mp3`} loop preload="auto" autoPlay />
 
       <header className="fixed inset-x-0 top-0 z-40 px-3 py-3 sm:px-8 sm:py-4">
         <div className="mx-auto max-w-7xl rounded-3xl border border-white/20 bg-black/25 px-4 py-3 text-white/80 shadow-2xl backdrop-blur-md sm:rounded-full sm:px-5">
@@ -237,7 +247,7 @@ export default function WeddingCarouselWebsite() {
 
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-black">
         <img
-          src="/photos/swapnil-ritisnigdha-optimized.jpg"
+          src={`${publicBase}photos/swapnil-ritisnigdha-optimized.jpg`}
           alt="Swapnil and Ritisnigdha engagement portrait"
           className="absolute inset-0 h-full w-full object-cover object-center opacity-80"
           fetchPriority="high"
